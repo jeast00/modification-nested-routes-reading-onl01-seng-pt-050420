@@ -4034,3 +4034,55 @@ Redirected to http://67.205.152.27:59814/authors
 Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
 
 
+Started GET "/authors" for 174.53.93.187 at 2020-10-01 16:23:59 +0000
+Cannot render console from 174.53.93.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 30ms (Views: 27.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/authors/4" for 174.53.93.187 at 2020-10-01 16:24:01 +0000
+Cannot render console from 174.53.93.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = ?[0m  [["author_id", 4]]
+  Rendered authors/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/authors/4/posts/new" for 174.53.93.187 at 2020-10-01 16:24:02 +0000
+Cannot render console from 174.53.93.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Parameters: {"author_id"=>"4"}
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.2ms)
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 22ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 174.53.93.187 at 2020-10-01 16:24:11 +0000
+Cannot render console from 174.53.93.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+F1ldsi+7x/dQ2jpzbe3PZ1q9DOrTNTWQ6gbvvAwhNIw42/cqyC7qbp51/MgS4DWvQWsIQYIDNSh0HV9WHmqIw==", "post"=>{"author_id"=>"4", "title"=>"new post", "description"=>"this is a new post"}, "commit"=>"Create Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at", "author_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "New Post"], ["description", "this is a new post"], ["created_at", "2020-10-01 16:24:11.474751"], ["updated_at", "2020-10-01 16:24:11.474751"], ["author_id", 4]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://67.205.152.27:59814/posts/19
+Completed 302 Found in 7ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/posts/19" for 174.53.93.187 at 2020-10-01 16:24:11 +0000
+Cannot render console from 174.53.93.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.4ms)
+
+
