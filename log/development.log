@@ -3980,3 +3980,26 @@ Processing by PostsController#edit as HTML
 Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.2ms)
 
 
+Started PATCH "/posts/18" for 174.53.93.187 at 2020-10-01 16:19:20 +0000
+Cannot render console from 174.53.93.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rBf1jmFrQAUR4/H0jjlsXkPL0ltUmoCRWku7xXTOu/tkqf8kAvUUs3bZTu5jxVu1Y6SKSfneWJO4M9UG3IeVCg==", "post"=>{"author_id"=>"4", "title"=>"Never", "description"=>"Will i ever"}, "commit"=>"Update Post", "id"=>"18"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "Will i ever"], ["updated_at", "2020-10-01 16:19:20.307013"], ["id", 18]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://67.205.152.27:59814/posts/18
+Completed 302 Found in 34ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/posts/18" for 174.53.93.187 at 2020-10-01 16:19:20 +0000
+Cannot render console from 174.53.93.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered posts/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.4ms)
+
+
