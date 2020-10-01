@@ -4025,3 +4025,12 @@ Processing by PostsController#edit as HTML
 Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/authors/123456/posts/18/edit" for 174.53.93.187 at 2020-10-01 16:23:59 +0000
+Cannot render console from 174.53.93.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#edit as HTML
+  Parameters: {"author_id"=>"123456", "id"=>"18"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 123456], ["LIMIT", 1]]
+Redirected to http://67.205.152.27:59814/authors
+Completed 302 Found in 7ms (ActiveRecord: 0.9ms)
+
+
